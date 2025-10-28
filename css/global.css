@@ -1,0 +1,88 @@
+/* global.css */
+
+/* 1. FONT DEFINITION (Moved from all files) */
+@font-face {
+    font-family: 'space-ranger-font';
+    src: url('../fonts/space-ranger-font/SpaceRanger-R9nrE.otf') format('opentype'),
+         url('../fonts/space-ranger-font/SpaceRanger3DItalic-8Or0n.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 2. CSS RESET (Moved from all files) */
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Roboto';
+    /* Note: We keep the base font-size at 1rem (16px) here to calculate other rem values easily */
+    font-size: 1.12rem; 
+}
+
+/* 3. RESPONSIVE TEXT STYLING */
+
+/* Use clamp() to set the responsive font size for P tags: */
+/* - MINIMUM SIZE: 1.125rem (18px) for small screens */
+/* - FLUID SIZE: 1.5vw for middle ground (scales with viewport width) */
+/* - MAXIMUM SIZE: 1.25rem (20px) for very large screens */
+p {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem); 
+    line-height: 1.6; /* Excellent for readability */
+}
+
+/* Header section start */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 30px;
+    /* border: solid red; for testing*/
+}
+
+.logo_container {
+    display: flex;
+    flex-shrink: 0;
+    margin-top: -30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    height: 40px;
+}
+.logo_container img {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 2rem;
+    list-style-type: none;/* From https://css.glass */
+    background: rgba(255, 255, 255, 0.41);
+    border-radius: 230rem;
+    box-shadow: 0 4px 30px rgba(53, 158, 250, 0.886);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border: 1px solid rgb(113, 112, 112);
+    height: 3rem;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    margin: 2rem;
+}

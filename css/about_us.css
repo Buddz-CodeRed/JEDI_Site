@@ -1,0 +1,667 @@
+@font-face {
+    font-family: 'space-ranger-font';
+    src: url('../fonts/space-ranger-font/SpaceRanger-R9nrE.otf') format('opentype'),
+         url('../fonts/space-ranger-font/SpaceRanger3DItalic-8Or0n.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Roboto';
+    font-size: 1.12rem;
+    /* color: azure; */
+}
+
+/* header section start */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 30px;
+    /* border: solid red; for testing*/
+}
+
+p {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem); 
+    line-height: 1.6; /* Excellent for readability */
+}
+
+/* bg video start */ */
+body {
+    position: relative;
+}
+
+.video_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.logo_container {
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    width: 10rem;
+    height: 30m;
+    z-index: 101;
+}
+
+.logo_container img,
+.logo_container .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 2rem;
+    list-style-type: none;/* From https://css.glass */
+    border-radius: 230rem;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    height: 3rem;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: rgb(53, 158, 250);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgb(53, 158, 250);
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+/* header section end */
+
+/* hero-banner starts here */
+.about_us_b {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero_banner {
+    width: 100%;
+    height: 50rem;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero_content {
+    text-align: center;
+    padding: 0 20px;
+    max-width: 1000px;
+}
+
+.hero_content h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    font-family: 'space-ranger-font';
+    color: azure;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero_content p {
+    font-size: 1.5rem;
+    color: azure;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* hero-banner end */
+
+/* about us content starts here */
+
+.about_us_c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about_us_c h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    padding: 30px;
+    font-family: space-ranger-font;
+    font-size: 5rem;
+    text-align: center;
+    color: Azure;
+}
+
+.content_ext {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15%;
+    gap: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.brief_intro {
+    color: #ffffff;
+}
+
+.par {
+    color: #ffffff;
+}
+
+/* about us content ends here */ 
+
+/* team section starts here */
+.about_us_d {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about_us_d h2{
+    font-size: 5rem;
+    font-family: space-ranger-font;
+    margin: 40px;
+    color: azure;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 500px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+.about_us_e h2 {
+    color: rgb(0, 0, 0);
+}
+
+.card {
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    background-position: center top;  /* Changed to top */
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2rem;
+    margin: 0 10px;
+    margin-top: 5rem;
+    display: flex;
+    align-items: flex-end;  /* Changed from flex-end to flex-start */
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 23px 10px 30px -5px rgba(0,0,40,0.8);
+}
+
+.card > .row {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-self: end;
+    flex-wrap: nowrap;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
+    box-shadow: 10px 10px 30px 5px rgba(0,0,0,1.8);
+    width: 100%;
+    padding: 10px 0;
+    align-items: flex-end;
+}
+
+.card > .row > .description {
+    display: flex;
+    justify-content: flex-end;    
+    text-align: right;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4), transparent);
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80px;
+    width: 520px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+}
+
+.description p {
+    color: #ffffff;
+    padding-top: 5px;
+}
+
+.description h4 {
+    text-transform: uppercase;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 600px;
+}
+
+input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Background images for each team member */
+.card[for="c1"] {
+    background-image: url('../images/about_us/Staff/Mccaw.png');
+    background-position: center 14%;
+}
+
+.card[for="c2"] {
+    background-image: url('../images/about_us/Staff/Portia.png');
+    background-position: center 30%;
+}
+
+.card[for="c3"] {
+    background-image: url('../images/about_us/Staff/Carter.png');
+    background-position: center 30%;
+}
+
+.card[for="c4"] {
+    background-image: url('../images/about_us/Staff/Cullen.png');
+    background-position: center 30%;
+}
+
+.card[for="c5"] {
+    background-image: url('../images/about_us/Staff/Jona.png');
+    background-position: center 30%;
+}
+
+.card[for="c6"] {
+    background-image: url('../images/about_us/Staff/Aaron.png');
+    background-position: center 30%;
+}
+/* team section ends */
+
+/* expertise section start */
+
+.about_us_e {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.about_us_e h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    font-family: space-ranger-font;
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+}
+
+.expertise_content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.expertise_content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: #000000(23,56,86,21);
+    gap: 40px;
+}
+
+.expertise_content ul > div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise_content ul > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.expertise_content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.expertise_content h3 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Alternate layout for even items */
+.slot2, .slot4 {
+    flex-direction: row-reverse;
+}
+
+/* expertise section end */
+
+/* Contact button */
+.contact_us_btn {
+    display: block;
+    margin: 60px auto;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact_us_btn:hover {
+    background-color: #0052a3;
+    transform: translateY(-2px);
+}
+
+/* footer start */
+/* footer start */
+footer {
+    height: 15em;
+    background-color: black;
+    margin-top: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-media a:hover {
+    opacity: 0.7;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.footer-text a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+/* footer end */
+/* footer end */
+
+/* hamburger menu start */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+/* hamburger menu end */
+
+/* Responsive Design start*/
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content_ext {
+        padding: 0 10%;
+    }
+    
+    .about_us_c h1, .about_us_d h2, .about_us_e h2 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .content_ext {
+        padding: 0 8%;
+    }
+    
+    .container {
+        height: 350px;
+    }
+
+    input:checked + label {
+        width: 500px;
+    }
+    
+    .expertise_content ul > div {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px 15px;
+        height: 4rem;
+    }
+
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 1001;
+    }
+
+    .navbar {
+        position: fixed;
+        left: -100%;
+        top: 4rem;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0;
+    }
+    
+    .navbar a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .hero_banner {
+        height: 30rem;
+    }
+
+    .hero_content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero_content p {
+        font-size: 1.1rem;
+    }
+
+    .about_us_c h1, .about_us_d h2, .about_us_e h2 {
+        font-size: 2.5rem;
+        height: 12rem;
+    }
+
+    .content_ext {
+        padding: 0 5%;
+        font-size: 1rem;
+    }
+    
+    .wrapper {
+        height: auto;
+        min-height: 50vh;
+        padding: 20px 10px;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+
+    .card {
+        width: 140px;
+        height: 220px;
+        margin: 8px;
+    }
+
+    input:checked + label {
+        width: 280px;
+    }
+    
+    .description h4 {
+        font-size: 1.1rem;
+    }
+    
+    .description p {
+        font-size: 0.85rem;
+    }
+
+    .expertise_content {
+        padding: 20px 10px;
+    }
+    
+    .expertise_content ul {
+        gap: 20px;
+    }
+
+    .expertise_content ul > div {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .expertise_content img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .expertise_content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .contact_us_btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero_content h1 {
+        font-size: 1.5rem;
+    }
+    
+    .about_us_c h1, .about_us_d h2, .about_us_e h2 {
+        font-size: 2rem;
+        height: 10rem;
+    }
+    
+    .card {
+        width: 120px;
+        height: 180px;
+    }
+    
+    input:checked + label {
+        width: 240px;
+    }
+}

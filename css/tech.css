@@ -1,0 +1,342 @@
+@font-face {
+    font-family: 'space-ranger-font';
+    src: url('../fonts/space-ranger-font/SpaceRanger-R9nrE.otf') format('opentype'),
+         url('../fonts/space-ranger-font/SpaceRanger3DItalic-8Or0n.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*, html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Roboto';
+    font-size: 1.12rem;
+    color: azure;
+}
+
+p {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem); 
+    line-height: 1.6; /* Excellent for readability */
+}
+
+
+/* bg video start */ */
+body {
+    position: relative;
+}
+
+.video_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.image img {
+    margin: auto;
+}
+
+.sat_wrapper {
+    box-shadow:2px,1px,3px,4px;
+}
+
+/* pj header section start */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 30px;
+    /* border: solid red; for testing*/
+}
+
+.logo_container {
+    display: flex;
+    flex-shrink: 0;
+    position: relative;
+    width: 10rem;
+    height: 30m;
+    z-index: 101;
+}
+
+.logo_container img,
+.logo_container .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 2rem;
+    list-style-type: none;/* From https://css.glass */
+    border-radius: 230rem;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    height: 3rem;
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+    right: 15px;
+    height: 2px;
+    background: rgb(53, 158, 250);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgb(53, 158, 250);
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+}
+
+/* tech header section end */
+
+/* content start */
+
+.sat_container { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    /* border: solid black; */
+}
+
+.title_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    padding: 30px;
+    font-family:space-ranger-font;
+    font-size: 5rem;
+    text-align: center;
+    /* border: solid black; */
+}
+
+.sat_wrapper {
+    width: 50rem;
+    height: 50rem;
+    
+}
+
+.componenets{
+    position: absolute;
+    top: 20rem;
+    line-height: 1.5rem;
+    margin: 5rem;
+    text-decoration: none;
+    font-size: 1rem; 
+}
+
+.sat_con_display li {
+list-style-type: none;
+}
+
+.componenets h3 {
+    flex-direction:column;
+    padding: 10rem;
+    flex-wrap: wrap;
+}
+/* content end */
+
+/* footer start */
+footer {
+    height: 15em;
+    background-color: black;
+    margin-top: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-media a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-media a:hover {
+    opacity: 0.7;
+}
+
+.footer-text {
+    text-align: center;
+}
+
+.footer-text a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+/* footer end */
+
+/* hamburger menu start */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+/* hamburger menu end */
+
+/* responsive design start */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .sat_container {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    .sat_wrapper {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .sat_cont_display {
+        width: 40rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .item_name, .item_desc {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .title_header {
+        font-size: 3rem;
+        height: 15rem;
+    }
+
+    .sat_container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .sat_wrapper {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .sat_cont_display {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem;
+    }
+
+    .item_name, .item_desc {
+        width: 100%;
+        height: 4rem;
+    }
+}
+/* responsive design end */
